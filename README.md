@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![Cloud Security Network Diagram](Images/CloudNetworkSecurityDiagram.PNG)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook files may be used to install only certain pieces of it as, for example, you can leave out [Install-Metricbeat-Playbook.yml](Install-Metricbeat-Playbook.yml) and [Metricbeat-Config.yml](Metricbeat-Config.yml) to omit the addition of Metricbeat to your network.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook files may be used to install only certain pieces of it as, for example, you can leave out [Install-Metricbeat-Playbook.yml](Ansible/Install-Metricbeat-Playbook.yml) and [Metricbeat-Config.yml](Ansible/Metricbeat-Config.yml) to omit the addition of Metricbeat to your network.
 
 This document contains the following details:
 - Description of the Topologu
@@ -57,7 +57,7 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because the configuration can be easily repeated without error on other machines.
 
-The [playbook](Install-ELK-Playbook.yml) implements the following tasks:
+The [playbook](Ansible/Install-ELK-Playbook.yml) implements the following tasks:
 - Install Docker.io
 - Install Python3-pip 
 - use pip module to install docker module
@@ -66,7 +66,7 @@ The [playbook](Install-ELK-Playbook.yml) implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![ELK Confirmation](Docker_ELK_Container_Confirm.PNG)
+![ELK Confirmation](Images/Docker_ELK_Container_Confirm.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines: 
@@ -85,8 +85,8 @@ These Beats allow us to collect the following information from each machine:
 In order to use the ELK playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the [ELK playbook](Install-ELK-Playbook.yml) file to the /etc/ansible/ directory.
-- Update the [hosts](hosts) file to include the IPs of the machines which you'd like ansible to run the playbook on.
+- Copy the [ELK playbook](Ansible/Install-ELK-Playbook.yml) file to the /etc/ansible/ directory.
+- Update the [hosts](Ansible/hosts) file to include the IPs of the machines which you'd like ansible to run the playbook on.
 - Run the playbook, and navigate to http://your-ELKServer-IP:5601/app/kibana#/home?_g=() to check that the installation worked as expected.
 
 <!-- _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._ -->
