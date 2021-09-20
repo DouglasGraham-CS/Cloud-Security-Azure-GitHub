@@ -19,8 +19,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly efficient and reliable, in addition to restricting unwanted access to the network.
-- _ What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly efficient and reliable, prtoecting the networks availability. Meanwhile, the Jump Box works to keep unwanted traffic out of the network by acting as the gateway via whitelisted IP addresses.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the metrics and system logs.
 
@@ -30,12 +29,12 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name               | Function      | IP Address    | Operating System |
-|--------------------|---------------|---------------|------------------|
-| JumpBoxProvisioner | Gateway       | 10.0.0.4      | Linux            |
-| Web-1              | Web Server    | 10.0.0.5      | Linux            |
-| Web-2              | Web Server    | 10.0.0.6      | Linux            |
-| ELKServer          | ELK Container | 10.1.0.4      | Linux            |
+| Name               | Function      | IP Address    | Operating System    |
+|--------------------|---------------|---------------|---------------------|
+| JumpBoxProvisioner | Gateway       | 10.0.0.4      | Linux (ubuntu 18.04)|
+| Web-1              | Web Server    | 10.0.0.5      | Linux (ubuntu 18.04)|
+| Web-2              | Web Server    | 10.0.0.6      | Linux (ubuntu 18.04)|
+| ELKServer          | ELK Container | 10.1.0.4      | Linux (ubuntu 18.04)|
 
 ### Access Policies
 
