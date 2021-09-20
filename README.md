@@ -29,12 +29,10 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name               | Function      | IP Address    | Operating System |
 |--------------------|---------------|---------------|------------------|
 | JumpBoxProvisioner | Gateway       | 10.0.0.4      | Linux            |
-| RedTeamDVWALB      | Load Balancer | 52.160.41.248 | N/A              |
 | Web-1              | Web Server    | 10.0.0.5      | Linux            |
 | Web-2              | Web Server    | 10.0.0.6      | Linux            |
 | ELKServer          | ELK Container | 10.1.0.4      | Linux            |
@@ -43,21 +41,18 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the Client IP 
-- _TODO: Add whitelisted IP addresses_
+Only the Jump Box Provisioner can accept connections from the Internet. Access to this machine is only allowed from the Client IP 
 
-Machines within the network can only be accessed by the Jump Box, IP 10.0.0.4.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Other machines within the network can only be accessed by the Jump Box, IP 10.0.0.4.
 
 A summary of the access policies in place can be found in the table below.
 
 | Name               | Publicly Accessible | Allowed IP Addresses |
 |--------------------|---------------------|----------------------|
 | JumpBoxProvisioner | No                  | Client IP            |
-| RedTeamDVWALB      | No                  | Client IP            |
 | Web-1              | No                  | 10.0.0.4             |
 | Web-2              | No                  | 10.0.0.4             |
-| ELKServer          | No                  | Client IP            |
+| ELKServer          | No                  | 10.0.0.4             |
 
 ### Elk Configuration
 
